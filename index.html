@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Fútbol en Vivo">
+    <title>Fútbol en Vivo HD</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>⚽ Fútbol en Vivo</h1>
+                <p class="tagline">Fútbol en vivo HD</p>
+            </div>
+            <nav class="nav">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#canales" class="nav-link">Canales</a>
+                <a href="#partidos" class="nav-link">Partidos Hoy</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h2 class="hero-title">Fútbol en Vivo</h2>
+            <p class="hero-subtitle">Partidos de <strong>fútbol en vivo</strong> en HD con agenda de hoy y canales online</p>
+            <p class="hero-description">
+                Sigue el fútbol de <strong>Argentina</strong> y <strong>Perú</strong>, junto a ligas de <strong>Sudamérica</strong> 
+                (Chile, Colombia y más), la <strong>Copa Libertadores</strong> y clásicos como <strong>Boca</strong> vs <strong>River</strong>, 
+                con horarios locales y señal estable desde cualquier dispositivo.
+            </p>
+        </div>
+    </section>
+
+    <!-- Partidos de Hoy -->
+    <section class="partidos-hoy" id="partidos">
+        <div class="container">
+            <div class="partidos-header">
+                <h2 class="section-title">📅 Partidos de Hoy</h2>
+                <span id="actualizacionIndicador" class="actualizacion-indicador">
+                    <span class="spinner">⟳</span> Actualizando...
+                </span>
+            </div>
+            <div class="partidos-grid" id="partidosGrid">
+                <!-- Los partidos se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Canales Deportivos -->
+    <section class="canales" id="canales">
+        <div class="container">
+            <h2 class="section-title">📺 Canales Deportivos en Vivo</h2>
+            <div class="canales-grid">
+                <div class="canal-card" data-canal-id="tyc-sports">
+                    <div class="canal-header">
+                        <div class="canal-logo">🏆</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">Tyc Sports</h3>
+                    <p class="canal-description">Ver Tyc Sports online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="tyc-sports">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="tnt-sports">
+                    <div class="canal-header">
+                        <div class="canal-logo">⚽</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">Tnt Sports</h3>
+                    <p class="canal-description">Ver Tnt Sports online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="tnt-sports">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="espn-premium">
+                    <div class="canal-header">
+                        <div class="canal-logo">📡</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">Espn Premium</h3>
+                    <p class="canal-description">Ver ESPN PREMIUM online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="espn-premium">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="win-sports">
+                    <div class="canal-header">
+                        <div class="canal-logo">🎬</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">Win Sports</h3>
+                    <p class="canal-description">Ver Win Sports online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="win-sports">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="dsports">
+                    <div class="canal-header">
+                        <div class="canal-logo">📺</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">DSports</h3>
+                    <p class="canal-description">Ver DSports online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="dsports">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="dsports-plus">
+                    <div class="canal-header">
+                        <div class="canal-logo">📺</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">DSports+</h3>
+                    <p class="canal-description">Ver DSports+ online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="dsports-plus">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="espn1">
+                    <div class="canal-header">
+                        <div class="canal-logo">📡</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">ESPN1</h3>
+                    <p class="canal-description">Ver ESPN1 online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="espn1">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="espn2">
+                    <div class="canal-header">
+                        <div class="canal-logo">📡</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">ESPN2</h3>
+                    <p class="canal-description">Ver ESPN2 online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="espn2">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="espn3">
+                    <div class="canal-header">
+                        <div class="canal-logo">📡</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">ESPN3</h3>
+                    <p class="canal-description">Ver ESPN3 online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="espn3">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="fox-sports">
+                    <div class="canal-header">
+                        <div class="canal-logo">🦊</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">Fox Sports</h3>
+                    <p class="canal-description">Ver Fox Sports online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="fox-sports">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="fox-sports-2">
+                    <div class="canal-header">
+                        <div class="canal-logo">🦊</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">Fox Sports 2</h3>
+                    <p class="canal-description">Ver Fox Sports 2 online en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="fox-sports-2">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="fox-sports-3">
+                    <div class="canal-header">
+                        <div class="canal-logo">🦊</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">Fox Sports 3</h3>
+                    <p class="canal-description">Ver Fox Sports 3 en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="fox-sports-3">Ver Canal</button>
+                </div>
+
+                <div class="canal-card" data-canal-id="liga1max">
+                    <div class="canal-header">
+                        <div class="canal-logo">🏆</div>
+                        <span class="canal-status" data-status="checking"></span>
+                    </div>
+                    <h3 class="canal-name">Liga1Max</h3>
+                    <p class="canal-description">Ver LIGA 1 MAX en vivo y en directo.</p>
+                    <button class="btn-ver-canal" data-canal="liga1max">Ver Canal</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para reproducir canal -->
+    <div class="modal" id="modalCanal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Cargando canal...</h2>
+            <div class="player-container">
+                <iframe id="playerFrame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p class="modal-info">Si el video no carga, el canal puede estar fuera de línea o requiere verificación adicional.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fútbol en Vivo HD</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Telegram</a>
+                <a href="#" class="social-link">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
