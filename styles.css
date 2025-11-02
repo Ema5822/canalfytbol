@@ -570,6 +570,41 @@ body {
     text-align: center;
 }
 
+/* Contenedores de Publicidad Star.io */
+.ad-container {
+    width: 100%;
+    margin: 1.5rem auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ad-banner-top {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.ad-middle {
+    margin: 2rem auto;
+    padding: 1rem 0;
+}
+
+.ad-banner-bottom {
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+.ad-container div {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-container iframe {
+    max-width: 100%;
+    border: none;
+}
+
 /* Footer */
 .footer {
     background: var(--secondary-color);
@@ -674,6 +709,15 @@ body {
     .partidos-hoy,
     .canales {
         padding: 1rem 0;
+    }
+    
+    .ad-container {
+        margin: 1rem auto;
+    }
+    
+    .ad-middle {
+        margin: 1.5rem auto;
+        padding: 0.5rem 0;
     }
 }
 

@@ -12,6 +12,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Star.io Publicidad -->
+    <script async src="https://app.star.io/ad/star.js"></script>
+    <script>
+        window.starConfig = {
+            ap: '203176611'
+        };
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -42,6 +49,11 @@
         </div>
     </section>
 
+    <!-- Publicidad Star.io - Banner Superior -->
+    <div class="ad-container ad-banner-top">
+        <div id="star-io-ad-1"></div>
+    </div>
+
     <!-- Partidos de Hoy -->
     <section class="partidos-hoy" id="partidos">
         <div class="container">
@@ -53,6 +65,11 @@
             </div>
             <div class="partidos-grid" id="partidosGrid">
                 <!-- Los partidos se cargarán dinámicamente -->
+            </div>
+            
+            <!-- Publicidad Star.io - Entre secciones -->
+            <div class="ad-container ad-middle">
+                <div id="star-io-ad-2"></div>
             </div>
         </div>
     </section>
@@ -192,6 +209,11 @@
                     <button class="btn-ver-canal" data-canal="liga1max">Ver Canal</button>
                 </div>
             </div>
+            
+            <!-- Publicidad Star.io - Banner Inferior -->
+            <div class="ad-container ad-banner-bottom">
+                <div id="star-io-ad-3"></div>
+            </div>
         </div>
     </section>
 
@@ -219,5 +241,50 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Cargar anuncios de Star.io después de que la página cargue
+        window.addEventListener('load', function() {
+            // Esperar a que Star.io esté listo
+            function loadStarAds() {
+                if (typeof star !== 'undefined' && star.showAds) {
+                    // Banner superior
+                    try {
+                        star.showAds('star-io-ad-1', {
+                            ap: '203176611'
+                        });
+                    } catch(e) {
+                        console.log('Error cargando anuncio 1:', e);
+                    }
+                    
+                    // Banner medio (entre secciones)
+                    setTimeout(() => {
+                        try {
+                            star.showAds('star-io-ad-2', {
+                                ap: '203176611'
+                            });
+                        } catch(e) {
+                            console.log('Error cargando anuncio 2:', e);
+                        }
+                    }, 1000);
+                    
+                    // Banner inferior
+                    setTimeout(() => {
+                        try {
+                            star.showAds('star-io-ad-3', {
+                                ap: '203176611'
+                            });
+                        } catch(e) {
+                            console.log('Error cargando anuncio 3:', e);
+                        }
+                    }, 2000);
+                } else {
+                    // Reintentar después de 500ms si Star.io aún no está cargado
+                    setTimeout(loadStarAds, 500);
+                }
+            }
+            
+            loadStarAds();
+        });
+    </script>
 </body>
 </html>
